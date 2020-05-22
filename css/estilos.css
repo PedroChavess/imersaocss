@@ -1,15 +1,50 @@
-body{ 
-    background-image: url("https://i.pinimg.com/originals/20/da/3e/20da3ed53d1be46cb8e95aeb67e11a64.jpg");
-    background-size:auto 105vh; 
-    font-family: Arial;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-image: url('../img/fundo.jpg');
+    background-size: auto 100vh;
+    font-family: 'Source Code Pro', monospace;
     height: 100vh;
   }
   
-  .menu{
-    background-color: white;
+  @media (min-width: 400px) {
+    body {
+      font-size: 14px;
+    }
   }
   
-  .menu ul{
+  @media (min-width: 600px) {
+    body {
+      font-size: 18px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    body {
+      font-size: 20px;
+    }
+  }
+
+  header {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .menu {
+    background-color: white;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+  }
+  
+  .menu ul {
     display: flex;
     justify-content: space-around;
   }
@@ -18,20 +53,69 @@ body{
     list-style: none;
   }
   
-  a {
+  .menu a {
     color: teal;
+    display: block;
+    padding: 10px;
     text-decoration: none;
   }
   
-  a:hover {
-    text-decoration: underline;
-  }
-  .site-subtitle,
   .site-title {
     color: whitesmoke;
     text-align: center;
+    font-family: 'Gloria Hallelujah', cursive;
+    text-align: 1.8em;
   }
   
-  .site-subtitle{
+  .site-subtitle {
+    color: silver;
     font-style: italic;
+    font-weight: lighter;
+    text-align: center;
+    font-size: 1.5em;
+    font-family: 'Luckiest Guy', cursive;
+    
+  }
+
+  .portfolio {
+    padding: 2em;
+    height: 100vh;
+}
+
+  .portfolio h2 {
+    font-family: 'Luckiest Guy', cursive;
+    color: #B0E0E6;
+    margin-bottom: 1.1em;
+    font-size: 3em;
+  }
+  .portfolio .grid {
+    display: grid;
+    gap: 2em;
+  }
+
+  @media (min-width: 560px){
+    .portfolio .grid {
+      grid-template-columns: 240px 240px;
+    }
+  }
+
+  @media (min-width: 880px){
+    .portfolio .grid {
+      grid-template-columns: repeat(3, 260px);
+      align-content: center;
+      justify-content: center;
+      height:  calc(100vh  - 8em - 48px);
+    }
+  }
+
+  .portfolio figure {
+    text-align: center;
+  }
+
+  .img-portfolio {
+    height: 180px;
+    width: 240px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
   }
